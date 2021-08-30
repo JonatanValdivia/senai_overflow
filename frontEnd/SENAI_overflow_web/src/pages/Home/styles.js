@@ -14,7 +14,6 @@ export const GistIcon = styled(FaGithub)`
 
 export const Main = styled.main`
     margin-top: 60px;
-
     display: grid;
     grid-template-columns: 20% 60% 20%;
 `;
