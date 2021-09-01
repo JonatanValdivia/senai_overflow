@@ -10,7 +10,7 @@ function Profile(){
                <p>E-mail: algumEmail@outlook.com</p>
            </div>
            <div>
-                <a href="#">Teste</a>
+                
            </div>
         </StyleProfile>
     );

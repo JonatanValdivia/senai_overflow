@@ -1,5 +1,7 @@
 const User = require("../models/User");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
+const auth = require("../config/auth");
+const jwt = require("jsonwebtoken")
 
 module.exports = {
     async store(req, res) {
@@ -28,14 +30,19 @@ module.exports = {
             password: passwordHashed
         })
         //deixar o usuário cadastrado já logado
-        //gerar um token
+        //gerar um token 01/09/2021
+        const token = jwt.sing({userId: user.id,}, auth.secret, {
+            expireIn: "1h"
+        })
 
         //retornar o usuário
         res.send({
            user: {
+            id: user.id,
             nome: user.name,
-            email: user.name,
-           }
+            email: user.email,
+           },
+           token
         })
 
     }

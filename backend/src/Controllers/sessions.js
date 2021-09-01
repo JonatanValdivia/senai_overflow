@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken'); //Importando o token
 const auth = require('../config/auth');
-const User = require ("../models/User")
-nodule.exports = {
+const User = require ("../models/User");
+const bcrypt = require('bcryptjs');
+module.exports = {
     async store(req, res){
         const { email, password } = req.body; //desestruturação
 
@@ -16,15 +17,15 @@ nodule.exports = {
 
         })
         //se a senha está correta;
-        if(!user || user.password !== password){ //caso não exista este usuário (email inexistente)
+        if(!user || !bcrypt.compareSync(password, user.password)){ //caso não exista este usuário (email inexistente)
 
-            return res.status(403)
-                .send({error: "Usuário e/ou senha inválidos"}); //status code de usuário não encontrado
+            return res.status(403)//status code de usuário não encontrado
+                .send({error: "Usuário e/ou senha inválidos"}); //Mensagem de erro
         }
 
         //gerar um token;
             //sign -> gera o token
-        jwt.sign({ userId: user.id }, 
+        const token = jwt.sign({ userId: user.id }, 
                 auth.secret, 
                 {
                     expiresIn: "1h"

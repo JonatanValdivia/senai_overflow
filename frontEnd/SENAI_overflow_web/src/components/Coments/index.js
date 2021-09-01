@@ -9,7 +9,7 @@ function Coments({coment}) {
                     por {coment.author.name}
                 </strong>
                 <p>
-                    em {coment.created_at} às 8:23
+                    em {coment.created_at} às 08:23
                 </p>
             </header>
             <p>{coment.description}</p>

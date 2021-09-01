@@ -13,7 +13,7 @@ export const GistIcon = styled(FaGithub)`
 `;
 
 export const Main = styled.main`
-    margin-top: 60px;
+    margin-top: 60px; 
     display: grid;
     grid-template-columns: 20% 60% 20%;
 `;
@@ -69,7 +69,7 @@ export const Post = styled.article`
             > p{
                 margin-top: 5px;
                 padding: 10px 0px 10px 12px;
-                
+
                 font-size: 18px;
                 border-left: 2px solid var(--primary);
             }
@@ -89,7 +89,10 @@ export const Post = styled.article`
             > p {
                 padding: 5px;
                 box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+                background-color: yellowgreen;
+                user-select: none;
             }
+
         }    
     }
 
