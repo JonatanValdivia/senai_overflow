@@ -2,6 +2,9 @@ const express = require("express");
 require('./database');
 const routes = require('./routes')
 const app = express();
+const cors = require("cors")
+
+app.use(cors());
 
 app.use(express.json()) // dizemos ao express que ele pode aceitar json nos corpos das requisições
 

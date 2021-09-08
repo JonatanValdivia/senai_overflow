@@ -11,7 +11,7 @@ routes.post("/users", userController.store);
 routes.use(authMiddleware);
 // app.get('/posts', postController.index);
 //Rotas privadas
-routes.get('/posts', authMiddleware, postController.index);
+routes.get('/posts', postController.index);
 
 
 

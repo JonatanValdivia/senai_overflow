@@ -12,6 +12,9 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 500px;
     padding: 30px;
     gap: 20px;
@@ -21,6 +24,10 @@ export const FormContainer = styled.form`
     > h1{
         text-align: center;
         margin-bottom: 20px;
+    }
+
+    >button{
+        width: 80%;
     }
 
 `

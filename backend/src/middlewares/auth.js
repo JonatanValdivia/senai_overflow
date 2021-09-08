@@ -1,10 +1,11 @@
 //
-const jwt = require("jsonwebtoken")
-const auth = require("../config/auth")
+const jwt = require("jsonwebtoken");
+const auth = require("../config/auth");
+
 module.exports = (req, res, next) => {
 
     //pegar o token no cabeçalho
-    const authorization = "req.headers.authorization"
+    const authorization = req.headers.authorization;
     //verificar se o token realmente veio
     if(!authorization){
         return res.status(401).send({
