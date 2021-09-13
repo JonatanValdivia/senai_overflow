@@ -1,3 +1,4 @@
+import { Router } from "react-router-dom";
 import { GlobalStyleComponent } from "./GlobalStyles";
 import Home from "./pages/Home"
 import Login from "./pages/Login";
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <GlobalStyleComponent />
-      <Login />
+      <Router/>
 
       {/* <Teste></Teste> */}
     </>

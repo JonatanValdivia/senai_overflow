@@ -1,18 +1,17 @@
-const routes = require('express').Router();
-const postController = require('./Controllers/posts');
-const sessionController = require('./Controllers/sessions');
-const userController = require ("./Controllers/users");
-const authMiddleware = require('./middlewares/auth');
+const routes = require("express").Router();
 
-// Rotas públicas
+const postController = require("./controllers/posts");
+const sessionController = require("./controllers/sessions");
+const userController = require("./controllers/users");
+const authMiddleware = require("./middlewares/auth");
+
+//rotas públicas
 routes.post('/sessions', sessionController.store);
-routes.post("/users", userController.store);
+routes.post('/users', userController.store);
 
 routes.use(authMiddleware);
-// app.get('/posts', postController.index);
-//Rotas privadas
+
+//rotas privadas
 routes.get('/posts', postController.index);
-
-
 
 module.exports = routes;
